@@ -9,7 +9,7 @@
 #
 package CatalystX::Controller::ExtJS::Direct::API;
 BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.0';
+  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.1';
 }
 # ABSTRACT: API and router controller for Ext.Direct
 use Moose;
@@ -18,7 +18,7 @@ use MooseX::MethodAttributes;
 
 use List::Util qw(first);
 use List::MoreUtils ();
-use JSON::Any;
+use JSON ();
 use CatalystX::Controller::ExtJS::Direct::Route;
 
 __PACKAGE__->config(
@@ -87,7 +87,7 @@ sub _build_api {
 
 sub encoded_api {
     my ( $self, $c ) = @_;
-    return JSON::Any->new->to_json( $self->set_namespace( $self->api, $c ? $c->req->params->{namespace} : () ) );
+    return JSON::encode_json( $self->set_namespace( $self->api, $c ? $c->req->params->{namespace} : () ) );
 }
 
 sub router {
@@ -108,7 +108,7 @@ sub router {
             }
         ];
         if ( $params->{extData} ) {
-            $reqs->[0]->{data} = JSON::Any->new->decode( delete $params->{extData} );
+            $reqs->[0]->{data} = JSON::decode_json( delete $params->{extData} );
         } else {
             $reqs->[0]->{data} = [{%$params}];
         }
@@ -154,7 +154,7 @@ sub router {
                 my $response = $c->res;
                 if ( $response->content_type eq 'application/json' ) {
                     (my $res_body = $response->body) =~ s/^\xEF\xBB\xBF//; # remove BOM
-                    my $json = JSON::Any->new->decode( $res_body );
+                    my $json = JSON::decode_json( $res_body );
                     $body = $json;
                 } else {
                     $body = $response->body;
@@ -214,7 +214,7 @@ CatalystX::Controller::ExtJS::Direct::API - API and router controller for Ext.Di
 
 =head1 VERSION
 
-version 2.1.0
+version 2.1.1
 
 =head1 SYNOPSIS
 

@@ -5,6 +5,7 @@ MANIFEST
 META.json
 META.yml
 README
+README.pod
 dist.ini
 lib/CatalystX/Action/ExtJS/Deserialize.pm
 lib/CatalystX/Action/ExtJS/Direct.pm

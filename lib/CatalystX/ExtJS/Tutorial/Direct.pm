@@ -9,7 +9,7 @@
 #
 package CatalystX::ExtJS::Tutorial::Direct;
 BEGIN {
-  $CatalystX::ExtJS::Tutorial::Direct::VERSION = '2.1.0';
+  $CatalystX::ExtJS::Tutorial::Direct::VERSION = '2.1.1';
 }
 #ABSTRACT: Introduction to CatalystX::ExtJS::Direct
 1;
@@ -23,7 +23,7 @@ CatalystX::ExtJS::Tutorial::Direct - Introduction to CatalystX::ExtJS::Direct
 
 =head1 VERSION
 
-version 2.1.0
+version 2.1.1
 
 =head1 INTRODUCTION
 
@@ -254,7 +254,7 @@ play around with the DBIC API:
  
  UserDBIC.create({first: 'Marge', last: 'Simpson', email:'marge@simpsons.com'});
  
- UserDBIC.read(2, function(marge){console.log(marge)});
+ UserDBIC.item(2, function(marge){console.log(marge)});
  
  UserDBIC.delete(2); 
 

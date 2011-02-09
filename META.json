@@ -35,7 +35,7 @@
             "Catalyst::Controller::REST" : 0,
             "Catalyst::Runtime" : "5.80024",
             "Catalyst::Utils" : 0,
-            "JSON::Any" : 0,
+            "JSON" : 0,
             "JSON::XS" : 0,
             "List::MoreUtils" : 0,
             "List::Util" : 0,
@@ -67,55 +67,55 @@
    "provides" : {
       "CatalystX::Action::ExtJS::Deserialize" : {
          "file" : "lib/CatalystX/Action/ExtJS/Deserialize.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Action::ExtJS::Direct" : {
          "file" : "lib/CatalystX/Action/ExtJS/Direct.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Action::ExtJS::Serialize" : {
          "file" : "lib/CatalystX/Action/ExtJS/Serialize.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::API" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/API.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::Route" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/Route.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::Route::Chained" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/Route.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::Route::Factory" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/Route.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::Route::REST" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/Route.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::Controller::ExtJS::Direct::Route::REST::ExtJS" : {
          "file" : "lib/CatalystX/Controller/ExtJS/Direct/Route.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::ExtJS::Direct" : {
          "file" : "lib/CatalystX/ExtJS/Direct.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::ExtJS::Tutorial::Direct" : {
          "file" : "lib/CatalystX/ExtJS/Tutorial/Direct.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       },
       "CatalystX::TraitFor::Request::ExtJS" : {
          "file" : "lib/CatalystX/TraitFor/Request/ExtJS.pm",
-         "version" : "v2.1.0"
+         "version" : "v2.1.1"
       }
    },
    "release_status" : "stable",
@@ -124,9 +124,14 @@
          "mailto" : "bug-catalystx-extjs-direct at rt.cpan.org",
          "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=CatalystX-ExtJS-Direct"
       },
-      "homepage" : "http://search.cpan.org/dist/CatalystX-ExtJS-Direct/"
+      "homepage" : "http://search.cpan.org/dist/CatalystX-ExtJS-Direct/",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/monken/p5-catalystx-extjs-direct.git",
+         "web" : "http://github.com/monken/p5-catalystx-extjs-direct"
+      }
    },
-   "version" : "2.1.0",
+   "version" : "2.1.1",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
