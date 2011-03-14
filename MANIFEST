@@ -19,6 +19,7 @@ lib/CatalystX/TraitFor/Request/ExtJS.pm
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/api.t
+t/exception.t
 t/json.t
 t/lib/MyApp.pm
 t/lib/MyApp/Controller/API.pm

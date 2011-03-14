@@ -30,7 +30,7 @@ my %module_build_args = (
     'Moritz Onken <onken@netcubed.de>'
   ],
   'dist_name' => 'CatalystX-ExtJS-Direct',
-  'dist_version' => '2.1.1',
+  'dist_version' => '2.1.2',
   'license' => 'bsd',
   'module_name' => 'CatalystX::ExtJS::Direct',
   'recommends' => {},

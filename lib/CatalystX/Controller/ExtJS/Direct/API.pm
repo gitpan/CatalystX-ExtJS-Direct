@@ -9,7 +9,7 @@
 #
 package CatalystX::Controller::ExtJS::Direct::API;
 BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.1';
+  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.2';
 }
 # ABSTRACT: API and router controller for Ext.Direct
 use Moose;
@@ -153,7 +153,7 @@ sub router {
                 $c->visit($route->build_url( $req->{data} ));
                 my $response = $c->res;
                 if ( $response->content_type eq 'application/json' ) {
-                    (my $res_body = $response->body) =~ s/^\xEF\xBB\xBF//; # remove BOM
+                    (my $res_body = $response->body || '') =~ s/^\xEF\xBB\xBF//; # remove BOM
                     my $json = JSON::decode_json( $res_body );
                     $body = $json;
                 } else {
@@ -169,13 +169,14 @@ sub router {
                 my $msg;
                 if(@{ $c->error } && List::MoreUtils::all { ref $_ } @{ $c->error }) {
                     $msg = @{$c->error} == 1 ? $c->error->[0] : $c->error;
+                    $msg = "$msg";
                 } elsif(scalar @{ $c->error }) {
-                    $msg = join "\n", @{ $c->error };
+                    $msg = join "\n", map { "$_" } @{ $c->error };
                 } else {
                     $msg = join("\n", "$@", $c->response->body || ());
                 }
-                push(@res, { type => 'exception', tid => $req->{tid}, message => $msg, status => $c->res->status });
-                $c->log->dump($msg) if($c->debug && !ref $msg);
+                push(@res, { type => 'exception', tid => $req->{tid}, message => $msg, status_code => $c->res->status });
+                $c->log->error($msg) if($c->debug && !ref $msg);
                 next REQUESTS;
             };
             
@@ -214,7 +215,7 @@ CatalystX::Controller::ExtJS::Direct::API - API and router controller for Ext.Di
 
 =head1 VERSION
 
-version 2.1.1
+version 2.1.2
 
 =head1 SYNOPSIS
 
