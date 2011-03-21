@@ -20,7 +20,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110550'
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110580'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -29,43 +29,43 @@ name: CatalystX-ExtJS-Direct
 provides:
   CatalystX::Action::ExtJS::Deserialize:
     file: lib/CatalystX/Action/ExtJS/Deserialize.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Action::ExtJS::Direct:
     file: lib/CatalystX/Action/ExtJS/Direct.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Action::ExtJS::Serialize:
     file: lib/CatalystX/Action/ExtJS/Serialize.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct:
     file: lib/CatalystX/Controller/ExtJS/Direct.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::API:
     file: lib/CatalystX/Controller/ExtJS/Direct/API.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::Route:
     file: lib/CatalystX/Controller/ExtJS/Direct/Route.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::Route::Chained:
     file: lib/CatalystX/Controller/ExtJS/Direct/Route.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::Route::Factory:
     file: lib/CatalystX/Controller/ExtJS/Direct/Route.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::Route::REST:
     file: lib/CatalystX/Controller/ExtJS/Direct/Route.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::Controller::ExtJS::Direct::Route::REST::ExtJS:
     file: lib/CatalystX/Controller/ExtJS/Direct/Route.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::ExtJS::Direct:
     file: lib/CatalystX/ExtJS/Direct.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::ExtJS::Tutorial::Direct:
     file: lib/CatalystX/ExtJS/Tutorial/Direct.pm
-    version: v2.1.2
+    version: v2.1.3
   CatalystX::TraitFor::Request::ExtJS:
     file: lib/CatalystX/TraitFor/Request/ExtJS.pm
-    version: v2.1.2
+    version: v2.1.3
 requires:
   Carp: 0
   Catalyst::Action: 0
@@ -83,13 +83,14 @@ requires:
   Moose: 1.21
   Moose::Role: 0
   MooseX::MethodAttributes: 0
+  Scalar::Util: 0
   Try::Tiny: 0
   namespace::autoclean: 0
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=CatalystX-ExtJS-Direct
   homepage: http://search.cpan.org/dist/CatalystX-ExtJS-Direct/
   repository: git://github.com/monken/p5-catalystx-extjs-direct.git
-version: 2.1.2
+version: 2.1.3
 x_Dist_Zilla:
   plugins:
     -
@@ -120,10 +121,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: '@Filter/PodSyntaxTests'
       version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PortabilityTests
-      name: '@Filter/PortabilityTests'
-      version: 1.101420
     -
       class: Dist::Zilla::Plugin::ReportVersions::Tiny
       name: '@Filter/ReportVersions::Tiny'
@@ -221,25 +218,33 @@ x_Dist_Zilla:
       name: '@Filter/CheckChangeLog'
       version: 0.01
     -
-      class: Dist::Zilla::Plugin::UploadToCPAN
-      name: '@Filter/UploadToCPAN'
-      version: 4.200004
-    -
       class: Dist::Zilla::Plugin::Git::Check
-      name: '@Filter/Git/Check'
+      name: '@Filter/Git::Check'
       version: 1.110500
     -
       class: Dist::Zilla::Plugin::Git::Commit
-      name: '@Filter/Git/Commit'
+      name: '@Filter/Git::Commit'
+      version: 1.110500
+    -
+      class: Dist::Zilla::Plugin::Git::CommitBuild
+      name: '@Filter/Git::CommitBuild'
       version: 1.110500
     -
       class: Dist::Zilla::Plugin::Git::Tag
-      name: '@Filter/Git/Tag'
+      name: '@Filter/TagMaster'
+      version: 1.110500
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: '@Filter/TagRelease'
       version: 1.110500
     -
       class: Dist::Zilla::Plugin::Git::Push
-      name: '@Filter/Git/Push'
+      name: '@Filter/Git::Push'
       version: 1.110500
+    -
+      class: Dist::Zilla::Plugin::UploadToCPAN
+      name: '@Filter/UploadToCPAN'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:

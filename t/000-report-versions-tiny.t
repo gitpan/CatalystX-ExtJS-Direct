@@ -76,6 +76,7 @@ eval { $v .= pmver('Moose','1.21') };
 eval { $v .= pmver('Moose::Role','any version') };
 eval { $v .= pmver('MooseX::MethodAttributes','any version') };
 eval { $v .= pmver('Pod::Usage','any version') };
+eval { $v .= pmver('Scalar::Util','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::WWW::Mechanize::Catalyst','any version') };
 eval { $v .= pmver('Try::Tiny','any version') };

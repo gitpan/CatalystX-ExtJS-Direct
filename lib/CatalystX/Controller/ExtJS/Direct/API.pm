@@ -9,7 +9,7 @@
 #
 package CatalystX::Controller::ExtJS::Direct::API;
 BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.2';
+  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.3';
 }
 # ABSTRACT: API and router controller for Ext.Direct
 use Moose;
@@ -18,6 +18,7 @@ use MooseX::MethodAttributes;
 
 use List::Util qw(first);
 use List::MoreUtils ();
+use Scalar::Util qw(blessed);
 use JSON ();
 use CatalystX::Controller::ExtJS::Direct::Route;
 
@@ -169,9 +170,9 @@ sub router {
                 my $msg;
                 if(@{ $c->error } && List::MoreUtils::all { ref $_ } @{ $c->error }) {
                     $msg = @{$c->error} == 1 ? $c->error->[0] : $c->error;
-                    $msg = "$msg";
+                    $msg = $msg if(blessed $msg);
                 } elsif(scalar @{ $c->error }) {
-                    $msg = join "\n", map { "$_" } @{ $c->error };
+                    $msg = join "\n", map { blessed $_ ? "$_" : $_ } @{ $c->error };
                 } else {
                     $msg = join("\n", "$@", $c->response->body || ());
                 }
@@ -215,7 +216,7 @@ CatalystX::Controller::ExtJS::Direct::API - API and router controller for Ext.Di
 
 =head1 VERSION
 
-version 2.1.2
+version 2.1.3
 
 =head1 SYNOPSIS
 

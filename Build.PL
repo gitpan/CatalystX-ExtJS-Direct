@@ -30,7 +30,7 @@ my %module_build_args = (
     'Moritz Onken <onken@netcubed.de>'
   ],
   'dist_name' => 'CatalystX-ExtJS-Direct',
-  'dist_version' => '2.1.2',
+  'dist_version' => '2.1.3',
   'license' => 'bsd',
   'module_name' => 'CatalystX::ExtJS::Direct',
   'recommends' => {},
@@ -52,6 +52,7 @@ my %module_build_args = (
     'Moose' => '1.21',
     'Moose::Role' => '0',
     'MooseX::MethodAttributes' => '0',
+    'Scalar::Util' => '0',
     'Try::Tiny' => '0',
     'namespace::autoclean' => '0'
   },

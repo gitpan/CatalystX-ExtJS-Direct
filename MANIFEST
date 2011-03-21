@@ -34,7 +34,6 @@ t/release-kwalitee.t
 t/release-minimum-version.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
-t/release-portability.t
 t/router.t
 t/script/myapp_server.pl
 t/synopsis.t
