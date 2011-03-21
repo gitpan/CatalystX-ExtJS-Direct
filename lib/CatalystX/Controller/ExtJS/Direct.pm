@@ -9,7 +9,7 @@
 #
 package CatalystX::Controller::ExtJS::Direct;
 BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::VERSION = '2.1.3';
+  $CatalystX::Controller::ExtJS::Direct::VERSION = '2.1.4';
 }
 # ABSTRACT: Role to identify ExtJS::Direct controllers
 
@@ -30,7 +30,7 @@ CatalystX::Controller::ExtJS::Direct - Role to identify ExtJS::Direct controller
 
 =head1 VERSION
 
-version 2.1.3
+version 2.1.4
 
 =head1 SYNOPSIS
 
