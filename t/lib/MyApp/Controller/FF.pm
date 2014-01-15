@@ -7,14 +7,14 @@
 #
 #   The (three-clause) BSD License
 #
-package
-  MyApp::Controller::Artist;
-  
+package MyApp::Controller::FF;
+
 use Moose;
-
 extends 'Catalyst::Controller';
-#with 'CatalystX::Controller::ExtJS::Direct';
-
-
-
+with 'Catalyst::Component::InstancePerContext';
+sub build_per_context_instance {
+#	use Devel::Dwarn;
+#	DwarnN(\@_);
+	shift
+}
 1;

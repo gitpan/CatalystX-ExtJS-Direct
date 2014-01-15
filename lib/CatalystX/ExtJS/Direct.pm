@@ -1,23 +1,22 @@
 #
 # This file is part of CatalystX-ExtJS-Direct
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2014 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package CatalystX::ExtJS::Direct;
-BEGIN {
-  $CatalystX::ExtJS::Direct::VERSION = '2.1.4';
-}
 # ABSTRACT: Enable Ext.Direct in Catalyst controllers
-
+$CatalystX::ExtJS::Direct::VERSION = '2.1.5';
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -25,7 +24,7 @@ CatalystX::ExtJS::Direct - Enable Ext.Direct in Catalyst controllers
 
 =head1 VERSION
 
-version 2.1.4
+version 2.1.5
 
 =head1 SYNOPSIS
 
@@ -88,14 +87,10 @@ Moritz Onken <onken@netcubed.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2014 by Moritz Onken.
 
 This is free software, licensed under:
 
   The (three-clause) BSD License
 
 =cut
-
-
-__END__
-

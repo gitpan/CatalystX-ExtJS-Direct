@@ -1,16 +1,14 @@
 #
 # This file is part of CatalystX-ExtJS-Direct
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2014 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package CatalystX::Controller::ExtJS::Direct::API;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.4';
-}
+$CatalystX::Controller::ExtJS::Direct::API::VERSION = '2.1.5';
 # ABSTRACT: API and router controller for Ext.Direct
 use Moose;
 extends qw(Catalyst::Controller::REST);
@@ -63,7 +61,7 @@ sub _build_api {
         next
           unless ( $controller->can('is_direct') || $meta->does_role('CatalystX::Controller::ExtJS::Direct') );
         my @methods;
-        foreach my $method ( $controller->get_action_methods() ) {
+        foreach my $method ( sort { $a->name cmp $b->name } $controller->get_action_methods ) {
             next
               unless ( my $action = $controller->action_for( $method->name ) );
             next unless ( exists $action->attributes->{Direct} );
@@ -206,9 +204,11 @@ sub end {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -216,7 +216,7 @@ CatalystX::Controller::ExtJS::Direct::API - API and router controller for Ext.Di
 
 =head1 VERSION
 
-version 2.1.4
+version 2.1.5
 
 =head1 SYNOPSIS
 
@@ -297,14 +297,10 @@ Moritz Onken <onken@netcubed.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2014 by Moritz Onken.
 
 This is free software, licensed under:
 
   The (three-clause) BSD License
 
 =cut
-
-
-__END__
-

@@ -1,16 +1,14 @@
 #
 # This file is part of CatalystX-ExtJS-Direct
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2014 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package CatalystX::TraitFor::Request::ExtJS;
-BEGIN {
-  $CatalystX::TraitFor::Request::ExtJS::VERSION = '2.1.4';
-}
+$CatalystX::TraitFor::Request::ExtJS::VERSION = '2.1.5';
 # ABSTRACT: Sets the request method via a query parameter
 use Moose::Role;
 
@@ -36,9 +34,11 @@ around 'method' => sub {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -46,7 +46,7 @@ CatalystX::TraitFor::Request::ExtJS - Sets the request method via a query parame
 
 =head1 VERSION
 
-version 2.1.4
+version 2.1.5
 
 =head1 METHODS
 
@@ -61,14 +61,10 @@ Moritz Onken <onken@netcubed.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2014 by Moritz Onken.
 
 This is free software, licensed under:
 
   The (three-clause) BSD License
 
 =cut
-
-
-__END__
-

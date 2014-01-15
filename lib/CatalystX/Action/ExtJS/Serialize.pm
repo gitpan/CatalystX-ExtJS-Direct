@@ -1,16 +1,14 @@
 #
 # This file is part of CatalystX-ExtJS-Direct
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2014 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package CatalystX::Action::ExtJS::Serialize;
-BEGIN {
-  $CatalystX::Action::ExtJS::Serialize::VERSION = '2.1.4';
-}
+$CatalystX::Action::ExtJS::Serialize::VERSION = '2.1.5';
 # ABSTRACT: Handle responses from uploads
 use strict;
 use warnings;
@@ -31,9 +29,11 @@ sub execute {
 
 1;
 
-
+__END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -41,7 +41,7 @@ CatalystX::Action::ExtJS::Serialize - Handle responses from uploads
 
 =head1 VERSION
 
-version 2.1.4
+version 2.1.5
 
 =head1 PUBLIC METHODS
 
@@ -58,14 +58,10 @@ Moritz Onken <onken@netcubed.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2014 by Moritz Onken.
 
 This is free software, licensed under:
 
   The (three-clause) BSD License
 
 =cut
-
-
-__END__
-

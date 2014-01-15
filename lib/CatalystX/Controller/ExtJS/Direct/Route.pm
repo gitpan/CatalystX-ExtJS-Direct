@@ -1,16 +1,14 @@
 #
 # This file is part of CatalystX-ExtJS-Direct
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2014 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package CatalystX::Controller::ExtJS::Direct::Route;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::Route::VERSION = '2.1.4';
-}
+$CatalystX::Controller::ExtJS::Direct::Route::VERSION = '2.1.5';
 #ABSTRACT: Ext.Direct route object
 use Moose;
 
@@ -56,9 +54,7 @@ sub prepare_request {
 }
 
 package CatalystX::Controller::ExtJS::Direct::Route::Chained;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::Route::Chained::VERSION = '2.1.4';
-}
+$CatalystX::Controller::ExtJS::Direct::Route::Chained::VERSION = '2.1.5';
 use Moose::Role;
 
 sub _build_arguments {
@@ -96,9 +92,7 @@ sub build_url {
 }
 
 package CatalystX::Controller::ExtJS::Direct::Route::REST;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::Route::REST::VERSION = '2.1.4';
-}
+$CatalystX::Controller::ExtJS::Direct::Route::REST::VERSION = '2.1.5';
 use Moose::Role;
 
 has 'crud_action' => ( is => 'rw', isa => 'Str' );
@@ -177,16 +171,11 @@ sub prepare_request {
 }
 
 package CatalystX::Controller::ExtJS::Direct::Route::REST::ExtJS;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::Route::REST::ExtJS::VERSION = '2.1.4';
-}
+$CatalystX::Controller::ExtJS::Direct::Route::REST::ExtJS::VERSION = '2.1.5';
 use Moose::Role;
 
 package CatalystX::Controller::ExtJS::Direct::Route::Factory;
-BEGIN {
-  $CatalystX::Controller::ExtJS::Direct::Route::Factory::VERSION = '2.1.4';
-}
-
+$CatalystX::Controller::ExtJS::Direct::Route::Factory::VERSION = '2.1.5';
 sub build {
     my ( $class, $dispatcher, $action ) = @_;
     my $params = { action => $action, dispatcher => $dispatcher };
@@ -220,7 +209,10 @@ sub build {
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -228,7 +220,7 @@ CatalystX::Controller::ExtJS::Direct::Route - Ext.Direct route object
 
 =head1 VERSION
 
-version 2.1.4
+version 2.1.5
 
 =head1 AUTHOR
 
@@ -236,11 +228,10 @@ Moritz Onken <onken@netcubed.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2014 by Moritz Onken.
 
 This is free software, licensed under:
 
   The (three-clause) BSD License
 
 =cut
-
